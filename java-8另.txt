@@ -1,0 +1,14 @@
+java8 底层储存结构： 
+   hashmap在储存时，hashmap中的碰撞情况（hashcode一样，equls不一样），以链表形式储存碰撞的值，加载因子（0.75）以防空间不足，而进行扩容，扩容时对所有值进行再次hash，降低碰撞情况。在查找数据时，如果碰撞的hashcode值的链表长度过长，equls耗时长。（数组-链表）
+   1.8中将链表在达到某个值时，将链表转化成红黑树，而且在扩容时不用对数据重新进行hashcode。
+
+ConcurrentHashMap 转化成CAS算法；
+
+JVM种类：
+
+Oracle-SUN Hotspot
+Oracle     JRocket
+IBM        J9 JVM
+Taobao     JVM  
+
+内存结构：1.8前(Hotspot在使用)方法区属于堆中永久区（PremGen）的一部分，1.8后永久区被取消，方法区变为MetaSpace元空间（使用物理内存）
